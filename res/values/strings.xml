@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AndroidSwitchDemoActivity!</string>
+    <string name="app_name">Android-switch-demo</string>
+
+    <drawable name="red_drawable">#CCAA1883</drawable>
+    <drawable name="green_drawable">#CC123Bff</drawable>
+    
+    <string name="settings_auto_orientation_on">开启</string>
+    <string name="settings_auto_orientation_off">关闭</string>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SwitchText">
+        <item name="android:paddingLeft">8px</item>
+        <item name="android:paddingBottom">8px</item>
+        <item name="android:textColor">#FFeeFFee</item>
+        <item name="android:textSize">24dip</item>
+        <item name="android:shadowColor">#BB000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="mySwitchStyle">
+        <!-- <item name="track">@drawable/switch_track_green</item>
+        <item name="thumb">@drawable/background_fenced</item> -->
+        <item name="track">@drawable/switch_track_green</item>
+        <item name="switchTextAppearanceAttrib">@style/mySwitchTextAppearance</item>
+        <item name="leftBackground">@drawable/bg_settings_switch_on</item>
+        <item name="rightBackground">@drawable/bg_settings_switch_off</item>
+    </style>
+    
+    <style name="Switch_Style_Default">
+        <item name="track">@drawable/bg_settings_switch_on</item>
+        <item name="backgroundMask">@drawable/bg_settings_switch_on</item>
+        <item name="leftBackground">@drawable/bg_settings_switch_on</item>
+        <item name="rightBackground">@drawable/bg_settings_switch_off</item>
+        <item name="pushStyle">true</item>
+        <item name="textOff">@string/settings_auto_orientation_off</item>
+        <item name="textOn">@string/settings_auto_orientation_on</item>
+        <item name="textOnThumb">false</item>
+        <item name="thumb">@drawable/ic_settings_switch_thumb</item>
+        <item name="trackTextPadding">2dp</item>
+        <item name="switchTextAppearanceAttrib">@style/mySwitchTextAppearance</item>
+    </style>
+
+    <style name="mySwitchTextAppearance">
+        <item name="textColor">#FFeeFFee</item>
+        <item name="textColorHighlight">#FFeeFFee</item>
+        <item name="textColorHint">#FFeeFFee</item>
+        <item name="textColorLink">#FFeeFFee</item>
+        <item name="textSize">16sp</item>
+        <item name="textStyle">normal</item>
+    </style>
+</resources>
