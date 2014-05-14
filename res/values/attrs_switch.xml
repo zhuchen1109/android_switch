@@ -57,6 +57,9 @@
         <attr name="backgroundMask" format="reference" />
         
         <attr name="checked" format="boolean" />
+        
+        <!-- if the switch should operate like iOS7 UISwitch -->
+   	 	<attr name="ios7Style" format="boolean" />
     </declare-styleable>
     <declare-styleable name="mySwitchTextAppearanceAttrib">
 
@@ -89,5 +92,4 @@
     </declare-styleable>
     <!-- Default style for the Switch widget. -->
     <attr name="mySwitchStyleAttr" format="reference" />
-
 </resources>

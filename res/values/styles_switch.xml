@@ -12,12 +12,17 @@
     </style>
 
     <style name="mySwitchStyle">
-        <!-- <item name="track">@drawable/switch_track_green</item>
-        <item name="thumb">@drawable/background_fenced</item> -->
-        <item name="track">@drawable/switch_track_green</item>
+        <item name="track">@drawable/bg_settings_switch_on</item>
+        <item name="backgroundMask">@drawable/bg_settings_switch_on11</item>
+        <item name="leftBackground">@drawable/bg_settings_switch_on11</item>
+        <item name="rightBackground">@drawable/bg_settings_switch_off11</item>
+        <item name="pushStyle">true</item>
+        <item name="textOff">@string/settings_auto_orientation_off</item>
+        <item name="textOn">@string/settings_auto_orientation_on</item>
+        <item name="textOnThumb">false</item>
+        <item name="thumb">@drawable/ic_settings_switch_thumb11</item>
+        <item name="trackTextPadding">2dp</item>
         <item name="switchTextAppearanceAttrib">@style/mySwitchTextAppearance</item>
-        <item name="leftBackground">@drawable/bg_settings_switch_on</item>
-        <item name="rightBackground">@drawable/bg_settings_switch_off</item>
     </style>
     
     <style name="Switch_Style_Default">

@@ -29,9 +29,9 @@ public class AndroidSwitchDemoActivity extends Activity implements OnChangeAttem
 //		yes.setEnabled(false);
 //		no.setEnabled(true);
 		//no.setTextScaleX(1.2f);
-        slideToUnLock = (MySwitch)findViewById(R.id.switch1);
-        slideToUnLock.setOnChangeAttemptListener(this);
-        slideToUnLock.setOnCheckedChangeListener(this);
+//        slideToUnLock = (MySwitch)findViewById(R.id.switch1);
+//        slideToUnLock.setOnChangeAttemptListener(this);
+//        slideToUnLock.setOnCheckedChangeListener(this);
     }
 	@Override
 	public void onChangeAttempted(boolean isChecked) {

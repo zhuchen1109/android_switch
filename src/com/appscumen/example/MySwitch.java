@@ -1,5 +1,6 @@
 package com.appscumen.example;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -31,6 +32,7 @@ import android.widget.CompoundButton;
  * options. 
  *
  */
+@SuppressLint("WrongCall")
 public class MySwitch extends CompoundButton {
 	
     private static final int TOUCH_MODE_IDLE = 0;
@@ -48,9 +50,10 @@ public class MySwitch extends CompoundButton {
     
     private int mOrientation = HORIZONTAL;
     private OnChangeAttemptListener mOnChangeAttemptListener;
-    private boolean mPushStyle;
+    private boolean mPushStyle,mIos7Style;
     private boolean mTextOnThumb;
     private int mThumbExtraMovement;
+    private int mThumbExtraMargin;
     private Drawable mLeftBackground;
     private Drawable mRightBackground;
     private Drawable mMaskDrawable;
@@ -168,8 +171,10 @@ public class MySwitch extends CompoundButton {
         mDrawableOn = a.getDrawable(R.styleable.MySwitch_drawableOn);
         mDrawableOff = a.getDrawable(R.styleable.MySwitch_drawableOff);
         mPushStyle = a.getBoolean(R.styleable.MySwitch_pushStyle, false);
+        mIos7Style = a.getBoolean(R.styleable.MySwitch_ios7Style, false);
         mTextOnThumb = a.getBoolean(R.styleable.MySwitch_textOnThumb, false);
         mThumbExtraMovement = a.getDimensionPixelSize(R.styleable.MySwitch_thumbExtraMovement, 0);
+        mThumbExtraMargin = 6;
         mThumbTextPadding = a.getDimensionPixelSize( R.styleable.MySwitch_thumbTextPadding, 0);
         mTrackTextPadding = a.getDimensionPixelSize( R.styleable.MySwitch_trackTextPadding, 0);
         mSwitchMinWidth = a.getDimensionPixelSize( R.styleable.MySwitch_switchMinWidth, 0);
@@ -513,7 +518,7 @@ public class MySwitch extends CompoundButton {
                         final float y = ev.getY();
                         final float dy = y - mTouchY;
                     	if (mOrientation == HORIZONTAL) {
-                            float newPos = Math.max(0,
+                            float newPos = Math.max(mThumbExtraMargin,
                                     Math.min(mThumbPosition + dx, getThumbScrollRange()));
                             if (newPos != mThumbPosition) {
                                 mThumbPosition = newPos;
@@ -742,7 +747,7 @@ public class MySwitch extends CompoundButton {
 		
 		@Override
 		public void run() {
-			if((checked && mThumbPosition >= total) || (!checked && mThumbPosition <= 0)) {
+			if((checked && mThumbPosition >= total) || (!checked && mThumbPosition <= mThumbExtraMargin)) {
 				MySwitch.super.setChecked(checked);
 				MySwitch.this.invalidate();
 				return;
@@ -751,8 +756,8 @@ public class MySwitch extends CompoundButton {
 			mThumbPosition += speed*SIXTY_FPS_INTERVAL;
 			if(checked && mThumbPosition > total) {
 				mThumbPosition = total;
-			}else if(!checked && mThumbPosition < 0) {
-				mThumbPosition = 0;
+			}else if(!checked && mThumbPosition < mThumbExtraMargin) {
+				mThumbPosition = mThumbExtraMargin;
 			}
 			invalidate();
 			postDelayed(this, SIXTY_FPS_INTERVAL);
@@ -975,6 +980,8 @@ public class MySwitch extends CompoundButton {
     				mThumbWidth/2 +
     				mTrackTextPadding*2 +
     				mTrackPaddingRect.left + mTrackPaddingRect.right);
+    	} else if(this.mIos7Style) {
+//    		switchWidth = mThumbWidth + mTrackPaddingRect.right + mTrackPaddingRect.left;
     	}
         
         final int trackHeight = mTrackDrawable.getIntrinsicHeight();
@@ -1064,7 +1071,7 @@ public class MySwitch extends CompoundButton {
             mThumbPosition = isChecked() ? getThumbScrollRange() : 0;
         } else  {
 //            mThumbPosition = isChecked() ? 0 : getThumbScrollRange();
-        	 mThumbPosition = isChecked() ? getThumbScrollRange() : 0;
+        	 mThumbPosition = isChecked() ? getThumbScrollRange() : mThumbExtraMargin;
         }
         
         Log.d(TAG, "getWidth()="+getWidth()+" getHeight()="+getHeight());
@@ -1300,7 +1307,18 @@ public class MySwitch extends CompoundButton {
 //        		backingLayer.drawBitmap(maskBitmap, 0, 0, xferPaint);
 //        		canvas.drawBitmap(tempBitmap, 0, 0, null);
 
-        	} else {
+        	} else if(mIos7Style) { 
+        		if(isChecked()) {
+        			if(mRightBackground != null) {
+        				mRightBackground.draw(canvas);
+        			}
+        		} else {
+        			if(mLeftBackground != null) {
+        				mLeftBackground.draw(canvas);
+        			}
+        		}
+        	}
+        	else {
         		if (rightBitmap != null) {
         			canvas.save();
         			if (canvas.getClipBounds(canvasClipBounds)) {
@@ -1385,12 +1403,29 @@ public class MySwitch extends CompoundButton {
         		}
         		canvas.restore();
         	}
-
-        	//Draw the Thumb
-        	//Log.d(TAG, "thumbBoundL, thumbBoundR=("+thumbBoundL+","+thumbBoundR+")");
-        	mThumbDrawable.setBounds(thumbBoundL, mSwitchTop, thumbBoundR, mSwitchBottom);
-        	mThumbDrawable.draw(canvas);
-
+        	
+        	if(mIos7Style) {
+        		Log.d(TAG, "thumbBoundL, thumbBoundR=("+thumbBoundL+","+thumbBoundR+")"
+        				+ ", mSwitchTop = " + mSwitchTop
+        				+ ", mSwitchBottom = " + mSwitchBottom
+        				+ ", (mSwitchBottom-mSwitchTop-mThumbHeight)/2 = " + (mSwitchBottom-mSwitchTop-mThumbHeight)/2
+        				);
+        		
+	        	/*mThumbDrawable.setBounds(thumbBoundL, (mSwitchBottom-mSwitchTop-mThumbHeight)/2, 
+	        			thumbBoundR, (mSwitchBottom-mSwitchTop-mThumbHeight)/2 + mThumbHeight);*/
+        		
+        		int top = (mSwitchBottom-mSwitchTop-mThumbHeight)/2 + mThumbExtraMargin;
+        		int bot = top + mThumbHeight;
+        		Log.d(TAG, "top = " + top + ", bot = " + bot);
+        		mThumbDrawable.setBounds(thumbBoundL, top, thumbBoundR, bot);
+	        	mThumbDrawable.draw(canvas);
+        	} else {
+        		//Draw the Thumb
+	        	//Log.d(TAG, "thumbBoundL, thumbBoundR=("+thumbBoundL+","+thumbBoundR+")");
+	        	mThumbDrawable.setBounds(thumbBoundL, mSwitchTop, thumbBoundR, mSwitchBottom);
+	        	mThumbDrawable.draw(canvas);
+        	}
+        	
         	//Draw the text on the Thumb
         	if (mTextOnThumb) {
         		mTextPaint.setAlpha(alpha);
@@ -1430,12 +1465,16 @@ public class MySwitch extends CompoundButton {
         int range=0;
         if (mOrientation == VERTICAL)
             range = mSwitchHeight - mThumbHeight - mTrackPaddingRect.top - mTrackPaddingRect.bottom + mThumbExtraMovement* 2;
-        if (mOrientation == HORIZONTAL) 
+        if (mOrientation == HORIZONTAL) {
 //            range = mSwitchWidth - mThumbWidth - mTrackPaddingRect.left - mTrackPaddingRect.right + mThumbExtraMovement* 2;
         	range = mSwitchWidth - mThumbWidth;
+        	if(mIos7Style) {
+        		range -= mThumbExtraMargin;
+        	}
 //        if (this.mPushStyle)
 //          	range += this.mTrackTextPadding*2;
 //        Log.d(TAG,"getThumbScrollRange() = "+ range);
+        }
         return range;
     }
 

@@ -32,6 +32,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int drawableOn=0x7f010004;
+        /**  if the switch should operate like iOS7 UISwitch 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ios7Style=0x7f010014;
         /** 
              the track drawable will be drawn on top of these background. So if
              these back grounds were to be visible, the track has to have transparency
@@ -45,7 +54,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int mySwitchStyleAttr=0x7f01001c;
+        public static final int mySwitchStyleAttr=0x7f01001d;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -117,7 +126,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int textAllCaps=0x7f01001b;
+        public static final int textAllCaps=0x7f01001c;
         /**  Text color. 
          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -127,7 +136,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int textColor=0x7f010014;
+        public static final int textColor=0x7f010015;
         /**  Color of the text selection highlight. 
          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -137,7 +146,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int textColorHighlight=0x7f010018;
+        public static final int textColorHighlight=0x7f010019;
         /**  Color of the hint text. 
          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -147,7 +156,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int textColorHint=0x7f010019;
+        public static final int textColorHint=0x7f01001a;
         /**  Color of the links. 
          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -157,7 +166,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int textColorLink=0x7f01001a;
+        public static final int textColorLink=0x7f01001b;
         /**  Text to use when the switch is in the unchecked/"off" state. 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -189,7 +198,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int textSize=0x7f010015;
+        public static final int textSize=0x7f010016;
         /**  Style (bold, italic, bolditalic) for the text. 
          <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
@@ -202,7 +211,7 @@ containing a value of this type.
 <tr><td><code>italic</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int textStyle=0x7f010016;
+        public static final int textStyle=0x7f010017;
         /**  Drawable to use as the "thumb" that switches back and forth. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -261,49 +270,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>monospace</code></td><td>3</td><td></td></tr>
 </table>
          */
-        public static final int typeface=0x7f010017;
+        public static final int typeface=0x7f010018;
     }
     public static final class drawable {
-        public static final int arrow_button64x49=0x7f020000;
-        public static final int arrow_button72x72=0x7f020001;
-        public static final int background5=0x7f020002;
-        public static final int background_fenced=0x7f020003;
-        public static final int background_raised=0x7f020004;
-        public static final int bg_settings_switch_off=0x7f020005;
-        public static final int bg_settings_switch_on=0x7f020006;
-        public static final int gold1=0x7f020007;
-        public static final int green_drawable=0x7f020027;
-        public static final int ic_launcher=0x7f020008;
-        public static final int ic_settings_switch_thumb=0x7f020009;
-        public static final int red_drawable=0x7f020026;
-        public static final int rgroove_copy=0x7f02000a;
-        public static final int rgroove_copy_vert=0x7f02000b;
-        public static final int rgroove_mask=0x7f02000c;
-        public static final int rgroove_mask_vert=0x7f02000d;
-        public static final int rswitch_button_small=0x7f02000e;
-        public static final int sgroove_copy=0x7f02000f;
-        public static final int sgroove_copy_vert=0x7f020010;
-        public static final int sleft_background_copy=0x7f020011;
-        public static final int sleft_background_copy1=0x7f020012;
-        public static final int sleft_background_copy1_vert=0x7f020013;
-        public static final int smask_background_copy=0x7f020014;
-        public static final int smask_background_copy_vert=0x7f020015;
-        public static final int sright_background_copy=0x7f020016;
-        public static final int sright_background_copy1=0x7f020017;
-        public static final int sright_background_copy1_vert=0x7f020018;
-        public static final int stoggle_copy=0x7f020019;
-        public static final int stoggle_copy1=0x7f02001a;
-        public static final int stoggle_copy2=0x7f02001b;
-        public static final int switch_thumb=0x7f02001c;
-        public static final int switch_thumb32x32=0x7f02001d;
-        public static final int switch_thumb_arrow=0x7f02001e;
-        public static final int switch_track=0x7f02001f;
-        public static final int switch_track_green=0x7f020020;
-        public static final int vswitch_off_drawable=0x7f020021;
-        public static final int vswitch_on_drawable=0x7f020022;
-        public static final int vswitch_thumb=0x7f020023;
-        public static final int vswitch_trac1k=0x7f020024;
-        public static final int vswitch_track=0x7f020025;
+        public static final int bg_settings_switch_off=0x7f020000;
+        public static final int bg_settings_switch_off11=0x7f020001;
+        public static final int bg_settings_switch_on=0x7f020002;
+        public static final int bg_settings_switch_on11=0x7f020003;
+        public static final int green_drawable=0x7f020008;
+        public static final int ic_launcher=0x7f020004;
+        public static final int ic_settings_switch_thumb=0x7f020005;
+        public static final int ic_settings_switch_thumb11=0x7f020006;
+        public static final int red_drawable=0x7f020007;
     }
     public static final class id {
         public static final int bold=0x7f040003;
@@ -342,6 +320,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #MySwitch_checked com.appscumen.example:checked}</code></td><td></td></tr>
            <tr><td><code>{@link #MySwitch_drawableOff com.appscumen.example:drawableOff}</code></td><td> drawablw to use when the switch is in the unchecked/"off" state.</td></tr>
            <tr><td><code>{@link #MySwitch_drawableOn com.appscumen.example:drawableOn}</code></td><td> drawablw to use when the switch is in the checked/"on" state.</td></tr>
+           <tr><td><code>{@link #MySwitch_ios7Style com.appscumen.example:ios7Style}</code></td><td> if the switch should operate like iOS7 UISwitch </td></tr>
            <tr><td><code>{@link #MySwitch_leftBackground com.appscumen.example:leftBackground}</code></td><td>
              the track drawable will be drawn on top of these background.</td></tr>
            <tr><td><code>{@link #MySwitch_orientation com.appscumen.example:orientation}</code></td><td></td></tr>
@@ -364,6 +343,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #MySwitch_checked
            @see #MySwitch_drawableOff
            @see #MySwitch_drawableOn
+           @see #MySwitch_ios7Style
            @see #MySwitch_leftBackground
            @see #MySwitch_orientation
            @see #MySwitch_pushStyle
@@ -386,7 +366,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
             0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b,
             0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f,
-            0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013
+            0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013,
+            0x7f010014
         };
         /**
           <p>
@@ -397,7 +378,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:backgroundMask
+          @attr name com.appscumen.example:backgroundMask
         */
         public static final int MySwitch_backgroundMask = 18;
         /**
@@ -411,7 +392,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:checked
+          @attr name com.appscumen.example:checked
         */
         public static final int MySwitch_checked = 19;
         /**
@@ -423,7 +404,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:drawableOff
+          @attr name com.appscumen.example:drawableOff
         */
         public static final int MySwitch_drawableOff = 5;
         /**
@@ -435,9 +416,25 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:drawableOn
+          @attr name com.appscumen.example:drawableOn
         */
         public static final int MySwitch_drawableOn = 4;
+        /**
+          <p>
+          @attr description
+           if the switch should operate like iOS7 UISwitch 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.appscumen.example:ios7Style
+        */
+        public static final int MySwitch_ios7Style = 20;
         /**
           <p>
           @attr description
@@ -451,7 +448,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:leftBackground
+          @attr name com.appscumen.example:leftBackground
         */
         public static final int MySwitch_leftBackground = 16;
         /**
@@ -468,7 +465,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>horizontal</code></td><td>1</td><td> the switch moves only on the x-axis(horizontally) </td></tr>
 <tr><td><code>vertical</code></td><td>0</td><td> the switch moves only on the y-axis(vertically) </td></tr>
 </table>
-          @attr name android:orientation
+          @attr name com.appscumen.example:orientation
         */
         public static final int MySwitch_orientation = 15;
         /**
@@ -484,7 +481,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:pushStyle
+          @attr name com.appscumen.example:pushStyle
         */
         public static final int MySwitch_pushStyle = 6;
         /**
@@ -496,7 +493,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:rightBackground
+          @attr name com.appscumen.example:rightBackground
         */
         public static final int MySwitch_rightBackground = 17;
         /**
@@ -514,7 +511,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:switchMinHeight
+          @attr name com.appscumen.example:switchMinHeight
         */
         public static final int MySwitch_switchMinHeight = 13;
         /**
@@ -532,7 +529,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:switchMinWidth
+          @attr name com.appscumen.example:switchMinWidth
         */
         public static final int MySwitch_switchMinWidth = 12;
         /**
@@ -550,7 +547,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:switchPadding
+          @attr name com.appscumen.example:switchPadding
         */
         public static final int MySwitch_switchPadding = 14;
         /**
@@ -562,7 +559,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:switchTextAppearanceAttrib
+          @attr name com.appscumen.example:switchTextAppearanceAttrib
         */
         public static final int MySwitch_switchTextAppearanceAttrib = 11;
         /**
@@ -575,7 +572,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
           <p>This is a private symbol.
-          @attr name android:textOff
+          @attr name com.appscumen.example:textOff
         */
         public static final int MySwitch_textOff = 3;
         /**
@@ -588,7 +585,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
           <p>This is a private symbol.
-          @attr name android:textOn
+          @attr name com.appscumen.example:textOn
         */
         public static final int MySwitch_textOn = 2;
         /**
@@ -604,7 +601,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:textOnThumb
+          @attr name com.appscumen.example:textOnThumb
         */
         public static final int MySwitch_textOnThumb = 7;
         /**
@@ -616,7 +613,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:thumb
+          @attr name com.appscumen.example:thumb
         */
         public static final int MySwitch_thumb = 0;
         /**
@@ -634,7 +631,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:thumbExtraMovement
+          @attr name com.appscumen.example:thumbExtraMovement
         */
         public static final int MySwitch_thumbExtraMovement = 8;
         /**
@@ -652,7 +649,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:thumbTextPadding
+          @attr name com.appscumen.example:thumbTextPadding
         */
         public static final int MySwitch_thumbTextPadding = 9;
         /**
@@ -664,7 +661,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:track
+          @attr name com.appscumen.example:track
         */
         public static final int MySwitch_track = 1;
         /**
@@ -682,7 +679,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:trackTextPadding
+          @attr name com.appscumen.example:trackTextPadding
         */
         public static final int MySwitch_trackTextPadding = 10;
         /** Attributes that can be used with a mySwitchTextAppearanceAttrib.
@@ -710,8 +707,8 @@ containing a value of this type.
            @see #mySwitchTextAppearanceAttrib_typeface
          */
         public static final int[] mySwitchTextAppearanceAttrib = {
-            0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017,
-            0x7f010018, 0x7f010019, 0x7f01001a, 0x7f01001b
+            0x7f010015, 0x7f010016, 0x7f010017, 0x7f010018,
+            0x7f010019, 0x7f01001a, 0x7f01001b, 0x7f01001c
         };
         /**
           <p>
@@ -726,7 +723,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:textAllCaps
+          @attr name com.appscumen.example:textAllCaps
         */
         public static final int mySwitchTextAppearanceAttrib_textAllCaps = 7;
         /**
@@ -743,7 +740,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:textColor
+          @attr name com.appscumen.example:textColor
         */
         public static final int mySwitchTextAppearanceAttrib_textColor = 0;
         /**
@@ -760,7 +757,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:textColorHighlight
+          @attr name com.appscumen.example:textColorHighlight
         */
         public static final int mySwitchTextAppearanceAttrib_textColorHighlight = 4;
         /**
@@ -777,7 +774,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:textColorHint
+          @attr name com.appscumen.example:textColorHint
         */
         public static final int mySwitchTextAppearanceAttrib_textColorHint = 5;
         /**
@@ -794,7 +791,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:textColorLink
+          @attr name com.appscumen.example:textColorLink
         */
         public static final int mySwitchTextAppearanceAttrib_textColorLink = 6;
         /**
@@ -812,7 +809,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name android:textSize
+          @attr name com.appscumen.example:textSize
         */
         public static final int mySwitchTextAppearanceAttrib_textSize = 1;
         /**
@@ -832,7 +829,7 @@ containing a value of this type.
 <tr><td><code>italic</code></td><td>2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:textStyle
+          @attr name com.appscumen.example:textStyle
         */
         public static final int mySwitchTextAppearanceAttrib_textStyle = 2;
         /**
@@ -855,7 +852,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>monospace</code></td><td>3</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:typeface
+          @attr name com.appscumen.example:typeface
         */
         public static final int mySwitchTextAppearanceAttrib_typeface = 3;
     };
